@@ -20,5 +20,5 @@ location /.well-known {
 ```
 4. 添加定时任务，用于自动更新证书，避免过期
 ```
-0 0 * * * * /路径/certbot-auto renew
+0 0 * * * /路径/certbot-auto renew
 ```
