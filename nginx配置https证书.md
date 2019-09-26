@@ -22,3 +22,11 @@ location /.well-known {
 ```
 0 0 * * * /路径/certbot-auto renew
 ```
+5. 查看本机上申请的证书
+```
+certbot-auto certificates
+```
+6. 注销证书
+```
+certbot-auto revoke --cert-path cert.pem文件路径 --reason superseded 
+```
