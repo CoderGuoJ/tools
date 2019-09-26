@@ -1,5 +1,5 @@
 
-# 为nginx添加https证书
+# 使用letsencrypt注册https证书
 
 1. 下载certbot-auto
 ```
@@ -30,3 +30,13 @@ certbot-auto certificates
 ```
 certbot-auto revoke --cert-path cert.pem文件路径 --reason superseded 
 ```
+7. 证书认证方式
+```
+    1. standalone 模式
+        本模式需要占用80或443端口(可以配置)来启动一个服务完成与证书服务的认证工作
+    2. webroot 模式
+        本模式不需要占用现有端口，只需将80端口添加一个/.well-known静态资源路径即可，letsencrypt 会在该路径下生成一个随机文件共认证服务访问，该路径必须可以被认证服务器访问到才可以完成认证
+    3. manual 模式
+        与webroot模式类似，只不过需要手动生成随机文件
+```
+        
